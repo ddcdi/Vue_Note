@@ -13,13 +13,20 @@ const routes = [
     },
     {
   name: 'readNote',
-    path: '/readNote/note/:noteId',  
-    component: () => import("@/views/readNote.vue")
+    path: '/note/:noteId',  
+    component: () => import("@/views/readNote.vue"),
+    props: true
+    },
+    {
+  name: 'confirmNote',
+    path: '/confirm/:noteId',  
+    component: () => import("@/views/confirmNote.vue"),
+    props: true
     }
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory('/'),
   routes
 })
 
